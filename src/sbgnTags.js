@@ -34,6 +34,11 @@ const handledSbgnClasses = new Set()
 .add('macromolecule multimer')
 .add('simple chemical multimer')
 .add('complex multimer')
-.add('compartment');
+.add('compartment')
+.add('biological activity') // AF specific
+.add('delay')
+.add('positive influence')
+.add('negative influence')
+.add('unknown influence');
 
 module.exports = (sbgnClass) => handledSbgnClasses.has(sbgnClass);

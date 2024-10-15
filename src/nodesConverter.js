@@ -48,13 +48,19 @@ const getStateVar = (glyph) => {
 };
 
 const getUnitOfInformation = (glyph) => {
-  return {
+  let unitOfInformation = {
     id: getId(glyph),
     'class': getClass(glyph),
     label: {
       text: objPath.get(glyph, 'label._attributes.text', '')
     }
   };
+  if (objPath.get(glyph, 'entity')) {
+    unitOfInformation.entity = {
+      name: objPath.get(glyph, 'entity._attributes.name', '')
+    } 
+  }
+  return unitOfInformation;
 };
 
 const getStateVars = (glyph) => {
